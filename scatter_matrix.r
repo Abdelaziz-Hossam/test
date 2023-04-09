@@ -1,4 +1,5 @@
 library(tidyverse)
+library(reshape2)
 
 correlation = cor(mtcars)
 correlation[upper.tri(correlation)] <- NA
@@ -9,4 +10,4 @@ ggplot(melted, aes(x = Var1, y = Var2, label = round(value, 2), fill = value)) +
     geom_text() +
     scale_fill_gradient(low = "grey", high = "red") +
     theme(rect = element_blank(),
-        axis.title = element_blank())
+          axis.title = element_blank())
